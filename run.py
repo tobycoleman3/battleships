@@ -40,3 +40,14 @@ def generate_ship(board):
         board[ship_row][ship_col] = " X "
         for row in board:
             ship_num += row.count(" X ")
+
+def welcome_to_game():
+    """
+    Message to be displayed at the start of the game 
+    for the user
+    """
+    print("Welcome To Battleships!")
+    name = input("Type your name and press enter: \n")
+    print(f'Hi {name}! We will generate your ships locations now.\n')
+    print('O are empty locations, * are hits and # are missed shots\n')
+    print('Top left corner is row: 0, col: 0')
