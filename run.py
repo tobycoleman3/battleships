@@ -27,3 +27,16 @@ def random_num(board):
     be used to guess on the board size
     """
     return randint(0, len(board)-1)
+
+def generate_ship(board):
+    """
+    This loop places 4 " X "(ships) randomly on the board 
+    """
+    ship_num = 0
+    while ship_num < 4:
+        ship_num = 0
+        ship_col = random_num(board)
+        ship_row = random_num(board)
+        board[ship_row][ship_col] = " X "
+        for row in board:
+            ship_num += row.count(" X ")
