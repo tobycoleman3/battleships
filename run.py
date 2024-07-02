@@ -62,3 +62,37 @@ def generate_board():
     make_board(user_guesses)
     generate_ship(user)
     generate_ship(comp)
+
+def user_guesses():
+    """
+    This gets the user guess and checks if it 
+    is a valid guess, if the guess has already been made,
+    check whether its a hit or miss and show the result.
+    """
+    print_board(user_guesses)
+    repeat = True
+    while repeat:
+        while True:
+            guess_col = input("Guess a column:\n")
+            if validate_data(guess_col):
+                break
+        while True:
+            guess_row = input("Guess a row:\n")
+            if validate_data(guess_row):
+                break
+
+        # Check if the user has already chosen that spot
+        if (user_guesses[guess_col][guess_row] == " # " or user_guesses[guess_col][guess_row] == " * "):
+            print("You've already guessed there, try again!")
+        else:
+            repeat = False
+        # Check if its a hit or not and display result
+        if comp[guess_col][guess_row] == " X ":
+            user_guesses[guess_col][guess_row] = " * "
+            print("Nice shot!!")
+        else:
+            user_guesses[guess_col][guess_row] = " # "
+            print("Unlucky! You missed")
+        
+
+    
