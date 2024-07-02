@@ -13,3 +13,10 @@ def make_board(board):
         board.append([" O "]*5)
     return board
 
+def print_board(board):
+    """
+    This is to print the board, removing list
+    format and adding spaces to make it clearer
+    """
+    for ind in board:
+        print(" ".join(ind))
