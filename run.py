@@ -51,3 +51,14 @@ def welcome_to_game():
     print(f'Hi {name}! We will generate your ships locations now.\n')
     print('O are empty locations, * are hits and # are missed shots\n')
     print('Top left corner is row: 0, col: 0')
+
+def generate_board():
+    """
+    This is to create the boards ready to play, 
+    with the computer boards ships not visable
+    """
+    make_board(user)
+    make_board(comp)
+    make_board(user_guesses)
+    generate_ship(user)
+    generate_ship(comp)
