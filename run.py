@@ -20,3 +20,10 @@ def print_board(board):
     """
     for ind in board:
         print(" ".join(ind))
+
+def random_num(board):
+    """
+    This is to generate a random number that will
+    be used to guess on the board size
+    """
+    return randint(0, len(board)-1)
