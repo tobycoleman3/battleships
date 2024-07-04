@@ -119,5 +119,10 @@ def comp_guess():
         user[guess_col][guess_row] = " # "
         print("Computer misses!")
         
-
+def play_game():
+    """
+    This is to start the game with welcome message and create the boards 
+    """
+    generate_board()
+    welcome_to_game()
     
