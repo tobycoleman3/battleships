@@ -93,6 +93,31 @@ def user_guesses():
         else:
             user_guesses[guess_col][guess_row] = " # "
             print("Unlucky! You missed")
+
+def comp_guess():
+    """
+    This allows the computer to guess at the users board using
+    randomly generated points
+    """
+    print_board(comp_guess)
+    repeat = True
+    guess_col = random_num(comp)
+    guess_row = random_num(comp)
+    # Check if spot already guessed
+    while repeat:
+        if (user[guess_col][guess_row] == " # " or user[guess_col][guess_row] == " * "):
+            guess_col = random_num(comp)
+            guess_row = random_num(comp)
+        else:
+            repeat = False
+    # Tell the user what the computer chose
+    print(f"Computer chose {guess_col + 1}, {guess_row + 1}")
+    if user[guess_col][guess_row] == " X ":
+        user[guess_col][guess_row] == " * "
+        print("It's a hit!")
+    else:
+        user[guess_col][guess_row] = " # "
+        print("Computer misses!")
         
 
     
