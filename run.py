@@ -130,12 +130,21 @@ def play_game():
     generate_board()
     welcome_to_game()
     i = 0
-    while i < 15:
-        print(f"\nThis is turn {i +1}/15 \n")
+    while i < 10:
+        print(f"\nThis is turn {i +1}/10 \n")
         user_guess()
         print_board(user_guesses)
         input("\nPress enter to continue :)")
         comp_guess()
+        print("\nHere is your board: ")
+        print_board(user)
+        input("\npress enter to continue")
+        i =+ 1
+        if check_winner(user) == 4:
+            i = 10
+        elif check_winner(user guesses) == 4:
+            i = 10
+    check_winner_final()
     
 
 def validate_data(value):
@@ -150,6 +159,19 @@ def validate_data(value):
         print("Please enter an interger between 1 and 5")
         return False
     return True
+
+def check_winner(board):
+    """
+    Check for a winner after 10 goes
+    """
+    user_result = check_winner(user_guesses)
+    comp_result = check_winner(user)
+    if user_result > comp_result:
+        print("Congratulations you are a winner!!")
+    elif user_result < comp_result:
+        print("Unlucky, the computer wins this one")
+    else:
+        print("It's a draw!")
     
 
 play_game()
