@@ -128,10 +128,15 @@ def play_game():
     This is to start the game with welcome message and create the boards 
     """
     generate_board()
-    print_board(user)
     welcome_to_game()
-    user_guess()
-    comp_guess()
+    i = 0
+    while i < 15:
+        print(f"\nThis is turn {i +1}/15 \n")
+        user_guess()
+        print_board(user_guesses)
+        input("\nPress enter to continue :)")
+        comp_guess()
+    
 
 def validate_data(value):
     """
