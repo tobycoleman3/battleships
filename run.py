@@ -63,7 +63,7 @@ def generate_board():
     generate_ship(user)
     generate_ship(comp)
 
-def user_guesses():
+def user_guess():
     """
     This gets the user guess and checks if it 
     is a valid guess, if the guess has already been made,
@@ -124,5 +124,20 @@ def play_game():
     This is to start the game with welcome message and create the boards 
     """
     generate_board()
+    print_board(user)
     welcome_to_game()
+    user_guess()
+
+def validate_data(value):
+    try:
+        if int(value) > 5 or int(value) <1:
+            raise ValueError("Out of bounds, choose a number between 1 and 5!")
+    except ValueError as e:
+        print(f"Invalid data {e}, Please try again.")
+        print("Please enter an interger between 1 and 5")
+        return False
+    return True
+    
+
+play_game()
     
