@@ -81,6 +81,10 @@ def user_guess():
             if validate_data(guess_row):
                 break
 
+        guess_col = int(guess_col)-1
+        guess_row = int(guess_row)-1
+
+
         # Check if the user has already chosen that spot
         if (user_guesses[guess_col][guess_row] == " # " or user_guesses[guess_col][guess_row] == " * "):
             print("You've already guessed there, try again!")
@@ -127,6 +131,7 @@ def play_game():
     print_board(user)
     welcome_to_game()
     user_guess()
+    comp_guess()
 
 def validate_data(value):
     """
