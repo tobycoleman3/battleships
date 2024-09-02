@@ -129,6 +129,9 @@ def play_game():
     user_guess()
 
 def validate_data(value):
+    """
+    This is to check if the values given are within the boards perimiters, if not a message will be displayewd stating that.
+    """
     try:
         if int(value) > 5 or int(value) <1:
             raise ValueError("Out of bounds, choose a number between 1 and 5!")
