@@ -103,7 +103,7 @@ def comp_guess():
     This allows the computer to guess at the users board using
     randomly generated points
     """
-    print_board(comp_guess)
+    print("\nNow its the computers turn!")
     repeat = True
     guess_col = random_num(comp)
     guess_row = random_num(comp)
@@ -142,7 +142,7 @@ def play_game():
         i =+ 1
         if check_winner(user) == 4:
             i = 10
-        elif check_winner(user guesses) == 4:
+        elif check_winner(user_guesses) == 4:
             i = 10
     check_winner_final()
     
@@ -162,9 +162,18 @@ def validate_data(value):
 
 def check_winner(board):
     """
+    checks how many times a boat had been hit off each players board
+    """
+    total = 0 
+    for list in board:
+        total =+ list.count( " * ")
+    return total
+
+def check_winner_final():
+    """
     Check for a winner after 10 goes
     """
-    user_result = check_winner(user_guesses)
+    user_result = check_winner(user_guess)
     comp_result = check_winner(user)
     if user_result > comp_result:
         print("Congratulations you are a winner!!")
@@ -172,6 +181,7 @@ def check_winner(board):
         print("Unlucky, the computer wins this one")
     else:
         print("It's a draw!")
+
     
 
 play_game()
