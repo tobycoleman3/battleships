@@ -50,7 +50,7 @@ def welcome_to_game():
     name = input("Type your name and press enter: \n")
     print(f'Hi {name}! We will generate your ships locations now.\n')
     print('O are empty locations, * are hits and # are missed shots\n')
-    print('Top left corner is row: 0, col: 0')
+    print('Top left corner is row: 1, col: 1')
 
 def generate_board():
     """
@@ -125,7 +125,7 @@ def comp_guess():
         
 def play_game():
     """
-    This is to start the game with welcome message and create the boards 
+    This is to start the game with welcome message and create the board. This is the main loop 
     """
     generate_board()
     welcome_to_game()
@@ -139,7 +139,7 @@ def play_game():
         print("\nHere is your board: ")
         print_board(user)
         input("\npress enter to continue")
-        i =+ 1
+        i += 1
         if check_winner(user) == 4:
             i = 10
         elif check_winner(user_guesses) == 4:
@@ -173,7 +173,7 @@ def check_winner_final():
     """
     Check for a winner after 10 goes
     """
-    user_result = check_winner(user_guess)
+    user_result = check_winner(user_guesses)
     comp_result = check_winner(user)
     if user_result > comp_result:
         print("Congratulations you are a winner!!")
